@@ -1,3 +1,5 @@
+##REQUISITO: VMware-PowerCLI
+
 ##devolverá vacio si la VM no tiene backup (si en Veeam configuras una tag vmware personalizada llamada VEEAM)
 (Get-VM -Name VMNAME | Get-Annotation -Name *VEEAM*).Value
 
