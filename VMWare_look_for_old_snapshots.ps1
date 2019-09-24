@@ -209,11 +209,10 @@ $htmlCode += '<html>'
 #endregion
 
 # Sending the report to the defined recipients
-$from = "ds.healthcheck@grupoantolin.com"
-$subject = "GANVMPWS03 - VMWare Snapshots Cleaning"
-$smtpServer = "172.25.120.139"
-$recipients = "infrasupport.ga@omega-peripherals.com","jesus.tamayo@grupoantolin.com","oscar.asuncion@grupoantolin.com","sergio.alegre@grupoantolin.com","Raul.hernando@grupoantolin.com"
-#$recipients = "sergio.alegre@grupoantolin.com"
+$from = "VMWare_Snapshots_Cleaning@DOMINIO.com"
+$subject = "VMWare Snapshots Cleaning"
+$smtpServer = "ip.ip.ip.ip" #SMTP server IP
+$recipients = "destinatario1@DOMINIO.com","destinatario2@DOMINIO.com""
 Send-MailMessage -From $from -Subject $subject -SmtpServer $smtpServer -To $recipients -Body $htmlCode -BodyAsHtml
 
 
