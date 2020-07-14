@@ -1,0 +1,5 @@
+Con ft * -Autosize formateamos la salida ya que el tamaño de las columas vendra determinadas por el tamaño del primer registro
+Todo lo que exceda el tamaño del primer registro aparecerá con puntos suspensivos
+la parte mala de este formateo es que ha de acabar el script (no saldra linea a linea) hasta que no haya calculado todos
+
+Get-VMHost | Select Name,@{n="ManagementIP"; e={Get-VMHostNetworkAdapter -VMHost $_ -VMKernel | ?{$_.ManagementTrafficEnabled} | %{$_.Ip}}} | ft * -AutoSize > C:\Users\sergio\Desktop\lista.txt
