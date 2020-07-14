@@ -57,7 +57,7 @@ Function Get-ParallelPort {
 }
 
 Start_VMWare_PowerCLI
-$vCenter="VCENTER_HOST"
+$vCenter="VCENTER_HOST" #Poner aqui el nombre del host vcenter
 Connect_VMWare $vCenter
 
 
