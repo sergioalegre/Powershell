@@ -1,0 +1,18 @@
+#documentacion:
+https://docs.datacore.com/SSV-WebHelp/SSV-WebHelp/Getting_Started_with_DataCore_Cmdlets.htm
+
+#lista comandos:
+https://docs.datacore.com/SSV-WebHelp/SSV-WebHelp/DC_Cmdlet_Ref_Gde.htm
+
+
+#Conectar (sin parametros es localhost)
+Connect-DcsServer
+
+
+#vDisk
+Get-DcsVirtualDisk
+Get-DcsVirtualDisk -VirtualDisk <vdisk name>
+
+
+#reclamar espacio
+Start-DcsVirtualDiskReclamation -VirtualDisk <vdisk name>
