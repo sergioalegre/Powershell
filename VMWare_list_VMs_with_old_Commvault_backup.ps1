@@ -20,11 +20,11 @@ Foreach ($vm in $lista_a_revisar){
         if ($fecha_ultimo_backup){ #si hay backup
             if ($fecha_ultimo_backup -lt $limite){
                 $nombre = $vm.name
-                Write-Host $nombre "se hizo backup el" $fecha_ultimo_backup -ForegroundColor Green
+                Write-Host $nombre "se hizo backup el" $fecha_ultimo_backup -ForegroundColor Yellow
             }
         }
         else{ #si no hay ningun backup
-            Write-Host $nombre "NO TIENE BACKUP" -ForegroundColor Yellow
+            Write-Host $nombre "NO TIENE BACKUP" -ForegroundColor Red
         }
     }
 }
