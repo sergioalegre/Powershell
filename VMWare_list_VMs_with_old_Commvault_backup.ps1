@@ -1,7 +1,7 @@
 #This script will:
   #get all VMs and exclude VMs we know need no backup
   #will check VM per VM if 'Backup Status' field has any data (a clue Commvault did backup once in the lifetime
-  #if there was a commvault in 'Backup Status' field, job will check VM per VM if 'Last Backup' is at least 3 days older.
+  #if there was a commvault in 'Backup Status' field, job will check VM per VM if 'Last Backup' is at least 3 days old. In that case will report have an outdated backup
 
 cls
 $limite = (Get-Date).AddDays(-3) #consideramos que tener un backup hace 3 dias = OK y mas de 4 o no tener backup = NOK
