@@ -2,17 +2,16 @@
 
 cls
 
+
 Get-VM | Get-HardDisk | Where {$_.storageformat -eq "Thick" `
--and $_.Name -NotLike "*VARIV*" `
--and $_.Name -NotLike "*VMCM*" `
--and $_.Name -NotLike "*VMRIV*" `
--and $_.Name -NotLike "*_MigratedITIBlock*" `
--and $_.Name -NotLike "*CORE*" `
--and $_.Name -NotLike "*WLC*" `
--and $_.Name -NotLike "*_replica" `
--and $_.Name -NotLike "*_lyvesync" `
--and $_.Name -NotLike "*VANAC*"  `
--and $_.Name -NotLike "*VMCOM0*" `
--and $_.Name -NotLike "*VMCM0*" `
--and $_.Name -NotLike "*VMDC0*" `
--and $_.Name -NotLike "GANVMSAP0*"} | Select Parent, Name, CapacityGB, storageformat | Sort -Property CapacityGB -Descending
+-and $_.Parent -NotLike "*VARIV*" `
+-and $_.Parent -NotLike "*VMRIV*" `
+-and $_.Parent -NotLike "*VMCM*" `
+-and $_.Parent -NotLike "*VMCOM*" `
+-and $_.Parent -NotLike "*_MigratedITIBlock*" `
+-and $_.Parent -NotLike "*CORE*" `
+-and $_.Parent -NotLike "*WLC*" `
+-and $_.Parent -NotLike "*_replica" `
+-and $_.Parent -NotLike "*_livesync" `
+-and $_.Parent -NotLike "*VANAC*"  `
+-and $_.Parent -NotLike "GANVMSAP0*"} | Select Parent, Name, CapacityGB, storageformat | Sort -Property CapacityGB -Descending
