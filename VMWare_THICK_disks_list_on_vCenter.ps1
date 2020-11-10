@@ -2,7 +2,6 @@
 
 cls
 
-
 Get-VM | Get-HardDisk | Where {$_.storageformat -eq "Thick" `
 -and $_.Name -NotLike "*VARIV*" `
 -and $_.Name -NotLike "*VMCM*" `
