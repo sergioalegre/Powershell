@@ -1,6 +1,6 @@
 cls
 
-$limite = (Get-Date).AddDays(-3) #we consider a good backup if 3 days or newer. 4 days or more = no backup
+$limite = (get-date).AddDays(-3).ToString("dd'/'MM'/'yyyy hh:mm:ss") #we consider a good backup if 3 days or newer. 4 days or more = no backup
 $limite.ToString() #convertimos en string para luego poder compararla con otra fecha que tenemos de tipo string
 
 
@@ -12,25 +12,7 @@ $lista_a_revisar = Get-VM | Where {
                             -and $_.Name -NotLike "vCLS*"  `
                             -and $_.Name -NotLike "TMPL_*"  `
                             -and $_.Name -NotLike "TMPLT_*"  `
-                            -and $_.Name -NotLike "*TEST*"  `
-                            -and $_.Name -NotLike "*WLC*"  `
-                            -and $_.Name -NotLike "*VANAC*"   `
-                            -and $_.Name -NotLike "*VMCOM0*"  `
-                            -and $_.Name -NotLike "*VMCM0*"  `
-                            -and $_.Name -NotLike "*VMDC0*"  `
-                            -and $_.Name -NotLike "GANVMSAP*"  `
-                            -and $_.Name -NotLike "GANSVC0*"  `
-                            -and $_.Name -NotLike "*CORE*"  `
-                            -and $_.Name -NotLike "*_Clone"  `
-                            -and $_.Name -NotLike "*_clone"  `
-                            -and $_.Name -NotLike "*_replica*"  `
-                            -and $_.Name -NotLike "*_MigratedITIBlock*"  `
-                            -and $_.Name -NotLike "CBTVMMES01"  `
-                            -and $_.Name -NotLike "IMCVM*"  `
-                            -and $_.Name -NotLike "CHKVM*"  `
-                            -and $_.Name -NotLike "CGZVM*"  `
-                            -and $_.Name -NotLike "BNGVM*"  `
-                            -and $_.Name -NotLike "SPBVM*" } | Sort -Property Name
+                            -and $_.Name -NotLike "*TEST*" } | Sort -Property Name
 
 
 Foreach ($vm in $lista_a_revisar){
