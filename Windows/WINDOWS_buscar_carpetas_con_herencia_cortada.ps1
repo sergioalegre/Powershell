@@ -1,0 +1,1 @@
+dir Y:\PUBLIC -Directory | Get-Acl | Select @{Name="Path";Expression={Convert-Path $_.Path}},areaccessrulesprotected | Format-table -AutoSize
