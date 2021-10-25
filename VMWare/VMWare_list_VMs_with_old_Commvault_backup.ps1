@@ -1,18 +1,22 @@
+#variables
+$vCenter = "your_vcenter_DNS"
+
+#highlights:
+# - string to datetime conversion
+# - string lenght reduce
+
 cls
 
-$limite = (get-date).AddDays(-3).ToString("dd'/'MM'/'yyyy hh:mm:ss") #we consider a good backup if 3 days or newer. 4 days or more = no backup
-$limite.ToString() #convertimos en string para luego poder compararla con otra fecha que tenemos de tipo string
+Import-module vmware.vimautomation.core
+Connect-VIServer -Server $vCenter
 
-
+$limite = (get-date).AddDays(-3) #we consider a good backup if 3 days or newer. 4 days or more = no backup
 $lista_a_revisar=@();
 $lista_a_revisar = Get-VM | Where {
                                  # always excluded / no vm backup, only config backup / temporally VM / still on Veeam
-                                 $_.Name -NotLike "*VARIV*"  `
-                            -and $_.Name -NotLike "*VMRIV*"  `
-                            -and $_.Name -NotLike "vCLS*"  `
-                            -and $_.Name -NotLike "TMPL_*"  `
-                            -and $_.Name -NotLike "TMPLT_*"  `
-                            -and $_.Name -NotLike "*TEST*" } | Sort -Property Name
+                                 $_.Name -NotLike "*exlude_pattern1*"  `
+                            -and $_.Name -NotLike "*exlude_pattern2*"  `
+                            -and $_.Name -NotLike "exlude_pattern3*" } | Sort -Property Name
 
 
 Foreach ($vm in $lista_a_revisar){
@@ -22,6 +26,8 @@ Foreach ($vm in $lista_a_revisar){
     $backup_commvault = (Get-VM -Name $nombre | Get-Annotation -Name 'Backup Status').Value #Commvault escribe en esta etiqueta asi sabremos que es un backup de Commvault
     if($backup_commvault){ #if it has backup
         $fecha_ultimo_backup = (Get-VM -Name $nombre | Get-Annotation -Name 'Last Backup').Value
+        $fecha_ultimo_backup=$fecha_ultimo_backup.Substring(0,10) #quedarnos solo con los primeros 10 caracteres
+        $fecha_ultimo_backup=[datetime]::ParseExact($fecha_ultimo_backup, 'dd/MM/yyyy', $null) #convertir de string a datetime
         if ($fecha_ultimo_backup){ #si hay backup
             if ($fecha_ultimo_backup -lt $limite){
                 Write-Host $nombre "backed up at" $fecha_ultimo_backup "is" (((get-view -viewtype VirtualMachine -filter @{"Name"=$nombre}).config).Annotation).split()[-1] -ForegroundColor Yellow

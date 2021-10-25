@@ -2,7 +2,8 @@
     #https://github.com/darkoperator/Posh-SSH/issues/173
     #http://www.powershellmagazine.com/2014/07/03/posh-ssh-open-source-ssh-powershell-module/
 	  #https://www.linuxito.com/gnu-linux/nivel-alto/400-listar-los-archivos-modificados-en-las-ultimas-24-horas
-	
+
+      #IMPORTANTE: ejecutar una vez a mano el Get-SCPFile para aceptar el certificado
 
 
 #1º BORRAR BACKUPS DE MÁS DE 7 DÍAS
