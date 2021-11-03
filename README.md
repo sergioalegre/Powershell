@@ -15,7 +15,11 @@
 ------------
 
 ### highlights
-  - barra de progreso, clear: VMWare-count_VMs_by_criticity
+  - barra de progreso: VMWare-count_VMs_by_criticity
+  - clear: VMWare-count_VMs_by_criticity
+  - string to datetime conversion: VMWare_list_VMs_with_old_Commvault_backup
+  - string lenght reduce: VMWare_list_VMs_with_old_Commvault_backup
+  - try/catch: Azure_change_blob_tier_and_download_blobs
 
 ### VMWare
   - **VMWare_Change_SNMP_all_Hosts_in_vCenter**
@@ -55,3 +59,4 @@
 
 ### Azure
   - **VMresize** resize Azure VMs
+  - **Azure_change_blob_tier_and_download_blobs** list, change tier, download blobs, look for blobs based pattern name
