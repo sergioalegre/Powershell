@@ -1,6 +1,8 @@
 #Nota: solo funciona si hay comunicacion no bloqueada por firewall
 
-#Highlights: invocar comando remoto mediante sesión
+###Highlights:
+# - invocar comando remoto mediante sesión
+# - Test-Connection
 
 #variables
 $vCenter = <ip_vcenter>
@@ -17,7 +19,7 @@ foreach ($vm in $lista){
     if(Test-Connection -Computername $vm -BufferSize 16 -Count 1 -Quiet)
     {
         $sl=(((get-view -viewtype VirtualMachine -filter @{"Name"=$vm.Name}).config).Annotation).split()[-1]
-        $ses = New-PSSession -ComputerName $vm            
+        $ses = New-PSSession -ComputerName $vm
         $contador=@();
         #netstat -an | findstr $server_monitorizacion | find /c /v ""
         $contador = Invoke-Command -Session $ses -ScriptBlock {netstat -an | findstr $server_monitorizacion}

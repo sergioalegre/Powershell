@@ -20,6 +20,11 @@
   - string to datetime conversion: VMWare_list_VMs_with_old_Commvault_backup
   - string lenght reduce: VMWare_list_VMs_with_old_Commvault_backup
   - try/catch: Azure_change_blob_tier_and_download_blobs
+  - PSSession: WINDOWS_ejecutar_comando_en_server_remoto
+  - Test-Connection: WINDOWS_ejecutar_comando_en_server_remoto
+  - ejecución en paralelo: WINDOWS_servers_con_conexiones_TIME_WAIT
+  - objetos array: WINDOWS_servers_con_conexiones_TIME_WAIT
+  - exportar a csv: WINDOWS_servers_con_conexiones_TIME_WAIT
 
 ### VMWare
   - **VMWare_Change_SNMP_all_Hosts_in_vCenter**
@@ -33,6 +38,7 @@
   - **VMWare_look_for_old_snapshots** in all vCenter
   - **VMWare_get_VMs_criticity** show a single VM criticity
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
+  - **WINDOWS_servers_con_conexiones_TIME_WAIT** look for servers with many unclosed conenctions
 
 ### FILES
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
@@ -56,6 +62,8 @@
   - **WINDOWS_Optimice_Volume+UNMAP** busca todas las unidades locales (que no sean de red) y las hace un defrag
   - **WINDOWS_check_servers_last_reboot_and_KB_installed_or_not** check a server list one by one, when was rebooted last and if have or not several patches. Output in csv format
   - **WINDOWS_kill_disconnected_sessions** kill disconected sessions on an RDP server
+  - **WINDOWS_ejecutar_comando_en_server_remoto** abrir sesion remota a varios servidores y ejecutar en ellos comandos locales
+  - **WINDOWS_ejecutar_comando_en_server_remoto_por_WMI**: comandos a servers remotos por WMI
 
 ### Azure
   - **VMresize** resize Azure VMs
