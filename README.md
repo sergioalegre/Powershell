@@ -38,7 +38,7 @@
   - **VMWare_look_for_old_snapshots** in all vCenter
   - **VMWare_get_VMs_criticity** show a single VM criticity
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
-  - **WINDOWS_servers_con_conexiones_TIME_WAIT** look for servers with many unclosed conenctions
+
 
 ### FILES
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
@@ -64,6 +64,7 @@
   - **WINDOWS_kill_disconnected_sessions** kill disconected sessions on an RDP server
   - **WINDOWS_ejecutar_comando_en_server_remoto** abrir sesion remota a varios servidores y ejecutar en ellos comandos locales
   - **WINDOWS_ejecutar_comando_en_server_remoto_por_WMI**: comandos a servers remotos por WMI
+  - **WINDOWS_servers_con_conexiones_TIME_WAIT** look for servers with many unclosed conenctions
 
 ### Azure
   - **VMresize** resize Azure VMs
