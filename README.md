@@ -25,6 +25,7 @@
   - ejecución en paralelo: WINDOWS_servers_con_conexiones_TIME_WAIT
   - objetos array: WINDOWS_servers_con_conexiones_TIME_WAIT
   - exportar a csv: WINDOWS_servers_con_conexiones_TIME_WAIT
+  - menu con opciones: VMWare-general_con_menu
 
 ### VMWare
   - **VMWare_Change_SNMP_all_Hosts_in_vCenter**
@@ -33,7 +34,7 @@
   - **VMWare_VMs_with_USB_SERIAL_Parallel** in all vCenter
   - **VMWare_comandos_varios** cheetsheet
   - **VMWare_get_VMs_criticity** get all VMs criticity in vCenter (based label in Notes field)
-  - **VMWare_list_VMs_with_old_Commvault_backup** look for outate backups based the comment on 'Last Backup' field
+  - **VMWare_list_VMs_with_old_Commvault_backup** look for outdate backups based the comment on 'Last Backup' field
   - **VMWare_listar_alarmas_VMs** get all vCenter alarms
   - **VMWare_look_for_old_snapshots** in all vCenter
   - **VMWare_get_VMs_criticity** show a single VM criticity
@@ -65,6 +66,8 @@
   - **WINDOWS_ejecutar_comando_en_server_remoto** abrir sesion remota a varios servidores y ejecutar en ellos comandos locales
   - **WINDOWS_ejecutar_comando_en_server_remoto_por_WMI**: comandos a servers remotos por WMI
   - **WINDOWS_servers_con_conexiones_TIME_WAIT** look for servers with many unclosed conenctions
+  - **WINDOWS Borrar Bad address de DHCP server**
+  - **WINDOWS_instalacion_remota_parches** lee una lista de servers y en base a la version instala un parche u otro
 
 ### Azure
   - **VMresize** resize Azure VMs

@@ -7,9 +7,9 @@
 
 
 #Abrimos sesion en VEEAM SERVER
-    $contrasena = Get-Content "E:\Scripts\Veeam\contrasena_gan_service_BEM.txt"
+    $contrasena = Get-Content "E:\contrasena_veeam_server.txt"
     $pw = convertto-securestring -AsPlainText -Force -String $contrasena
-    $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist "DOMINIO\gan_service_BEM",$pw
+    $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist "DOMINIO\cuenta_servicio_veeam",$pw
     $sesion = New-PSSession VEEAM_SERVER_NAME -credential $cred
 
 
