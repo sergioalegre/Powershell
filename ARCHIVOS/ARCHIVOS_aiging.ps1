@@ -1,11 +1,6 @@
-##BORRAR FICHEROS DE MAS DE 15 DIAS EN UN PATH CONCRETO##
-
-  #Variables
-  $path = ‚Äú\\SERVER_NAME\Share$\‚Äù
-  $limit = (Get-Date).AddDays(-15)
-  #C√≥digo
-  Get-ChildItem -Path $path -Recurse -Force | Where-Object { !$_.PSIsContainer -and $_.CreationTime -lt $limit } | Remove-Item -Force
-  #borrar directorios que hayan quedado vacios
-  Get-ChildItem $path -Recurse | Where-Object {$_.PSIsContainer -eq $True} | Where-Object {($_.GetFiles().Count -lt 1 -and $_.GetDirectories().Count -lt 1)} | Select-Object FullName | ForEach-Object {Remove-Item $_.fullname -Recurse}
-
-
+#Aiging a los 15 dÌas
+$path = ì\\server\S$\î
+$limit = (Get-Date).AddDays(-15)
+Get-ChildItem -Path $path -Recurse -Force | Where-Object { !$_.PSIsContainer -and $_.CreationTime -lt $limit } | Remove-Item -Force
+#borrar directorios vacios
+Get-ChildItem $path -Recurse | Where-Object {$_.PSIsContainer -eq $True} | Where-Object {($_.GetFiles().Count -lt 1 -and $_.GetDirectories().Count -lt 1)} | Select-Object FullName | ForEach-Object {Remove-Item $_.fullname -Recurse}

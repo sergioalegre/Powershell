@@ -41,7 +41,7 @@
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
 
 
-### FILES
+### Archivos (Files management)
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
   - **ARCHIVOS_archieved_files** look for archieved files (offline attribute + disk size 0)
   - **ARCHIVOS_buscar_herencia_permisos_cortada** look for folder with inherance problemas
