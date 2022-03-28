@@ -18,7 +18,9 @@
   - barra de progreso: VMWare-count_VMs_by_criticity
   - clear: VMWare-count_VMs_by_criticity
   - string to datetime conversion: VMWare_list_VMs_with_old_Commvault_backup
+  - string to int: WINDOWS_Remote_Sites_Average_Latency
   - string lenght reduce: VMWare_list_VMs_with_old_Commvault_backup
+  - string substring: WINDOWS_Remote_Sites_Average_Latency
   - try/catch: Azure_change_blob_tier_and_download_blobs
   - PSSession: WINDOWS_ejecutar_comando_en_server_remoto
   - Test-Connection: WINDOWS_ejecutar_comando_en_server_remoto
@@ -68,6 +70,7 @@
   - **WINDOWS_servers_con_conexiones_TIME_WAIT** look for servers with many unclosed conenctions
   - **WINDOWS Borrar Bad address de DHCP server**
   - **WINDOWS_instalacion_remota_parches** lee una lista de servers y en base a la version instala un parche u otro
+  - **WINDOWS_Remote_Sites_Average_Latency** calcula la latencia media contra todos los sites remotos desde un collocation
 
 ### Azure
   - **VMresize** resize Azure VMs
