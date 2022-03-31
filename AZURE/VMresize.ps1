@@ -1,5 +1,6 @@
-#NOTA1 Resize para maquineas Windows, ver mas abajo que cambiar para otra Linux
+#NOTA1 Resize para maquinas Windows, ver mas abajo que cambiar para otra Linux
 #NOTA2: Posible problema con discos extra, ver mas abajo
+
 Connect-AzAccount
 
 # Set variables
@@ -17,16 +18,16 @@ $originalVM = Get-AzVM `
 
 # Remove the original VM
 Stop-AzVM -ResourceGroupName $resourceGroup -Name $vmName -Force
-Remove-AzVM -ResourceGroupName $resourceGroup -Name $vmName    
+Remove-AzVM -ResourceGroupName $resourceGroup -Name $vmName
 
-# Create the basic configuration for the replacement VM. 
+# Create the basic configuration for the replacement VM.
 $newVM3 = New-AzVMConfig `
    -VMName $originalVM.Name `
    -VMSize $newSize `
    -Tags $originalVM.Tags `
    -LicenseType $originalVM.LicenseType
 
-# NOTA1: For a Linux VM, change the last parameter from -Windows to -Linux 
+# NOTA1: For a Linux VM, change the last parameter from -Windows to -Linux
 Set-AzVMOSDisk `
    -VM $newVM3 -CreateOption Attach `
    -ManagedDiskId $originalVM.StorageProfile.OsDisk.ManagedDisk.Id `
@@ -34,7 +35,7 @@ Set-AzVMOSDisk `
    -Windows
 
 # Add Data Disks
-foreach ($disk in $originalVM.StorageProfile.DataDisks) { 
+foreach ($disk in $originalVM.StorageProfile.DataDisks) {
 Add-AzVMDataDisk -VM $newVM3 `
    -Name $disk.Name `
    -Caching $disk.Caching `
@@ -50,8 +51,8 @@ Add-AzVMDataDisk -VM $newVM3 `
 #etc
 
 
-# Add NIC(s) and keep the same NIC as primary; keep the Private IP too, if it exists. 
-foreach ($nic in $originalVM.NetworkProfile.NetworkInterfaces) {	
+# Add NIC(s) and keep the same NIC as primary; keep the Private IP too, if it exists.
+foreach ($nic in $originalVM.NetworkProfile.NetworkInterfaces) {
 if ($nic.Primary -eq "True")
 {
         Add-AzVMNetworkInterface `
@@ -62,7 +63,7 @@ if ($nic.Primary -eq "True")
            {
              Add-AzVMNetworkInterface `
             -VM $newVM3 `
-             -Id $nic.Id 
+             -Id $nic.Id
             }
   }
 

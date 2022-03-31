@@ -46,8 +46,10 @@
 ### Archivos (Files management)
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
   - **ARCHIVOS_archieved_files** look for archieved files (offline attribute + disk size 0)
-  - **ARCHIVOS_buscar_herencia_permisos_cortada** look for folder with inherance problemas
+  - **ARCHIVOS_buscar_herencia_permisos_cortada** look for folder with inherance problems
   - **ARCHIVOS_copiar_jerarquia_carpetas** just copy folder jerarchy from source to destination
+  - **ARCHIVOS_Buscar archivos con un patron y ejecutarlos**
+  - **ARCHIVOS_crear carpetas recursivamente y ponerles permisos**
 
 ### Datacore
   - **DATACORE_varios.txt** cheetsheet
