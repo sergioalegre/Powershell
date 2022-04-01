@@ -55,6 +55,7 @@
   - **DATACORE_varios.txt** cheetsheet
   - **List_Datacore_Server_IPs** list all Datacore servers IPs on vCenter
   - **SNMP config** configure SNMP settings and create firewall rules
+  - **VMWare no ve los vDisk tras encender Datacore** Rescan iSCSI HBA if VMware do not detect vDisk afer Datacore power up
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet
@@ -73,6 +74,8 @@
   - **WINDOWS Borrar Bad address de DHCP server**
   - **WINDOWS_instalacion_remota_parches** lee una lista de servers y en base a la version instala un parche u otro
   - **WINDOWS_Remote_Sites_Average_Latency** calcula la latencia media contra todos los sites remotos desde un collocation
+  - **AD buscar pcs con un patron de nombre**
+  - **WINDOWS cambiar letra de unidad del homedrive**
 
 ### Azure
   - **VMresize** resize Azure VMs
