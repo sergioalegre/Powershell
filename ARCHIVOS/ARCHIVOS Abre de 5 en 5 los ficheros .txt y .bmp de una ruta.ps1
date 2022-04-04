@@ -1,4 +1,4 @@
-﻿#El script busca dentro de una carpeta recursivamente archivos de varias extensiones, los abre de 5 en 5 esperando 2 segundos en cada iteracion.
+﻿#Abre de 5 en 5 los ficheros .txt y .bmp que esten en C:\TEST
 
 $location = "C:\TEST"
 $i =0
@@ -11,7 +11,7 @@ ForEach ($file in $lista)
    
     if ($i -eq 5)
     {
-        sleep(2)
+        sleep(5)
         $i=0
     }
 }

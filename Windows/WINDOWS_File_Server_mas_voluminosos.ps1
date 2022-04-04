@@ -2,11 +2,11 @@
 ###Nota: bug conocido: cuenta el espacio de un disco usb como espacio de la VM y no se como evitarlo
 
 
-### Highlights: 
+### Highlights:
 ### - $ErrorActionPreference= 'silentlycontinue': para que no salgan errores en el output
 
 
-### Variables: 
+### Variables:
 $vCenter = "<vCenter-Server>"
 
 
@@ -22,22 +22,23 @@ $lista_amarilla = $lista_roja = @();
 Write-Host "How many FIL servers we have: " $lista.Count
 foreach ($vm in $lista){
     if(Test-Connection -Computername $vm -BufferSize 16 -Count 1 -Quiet){
-        
+
         #espacio provisionado VMWARE
         $espacio = (Get-HardDisk -VM $vm.Name | Measure-Object -Sum CapacityGB).Sum
+        $espacio=[int]$espacio #quitar los decimales
 
 
         #espacio real usado WINDOWS
         $ses = New-PSSession -ComputerName $vm.Name
         $contador = Invoke-Command -Session $ses -ScriptBlock {Get-WmiObject -Class Win32_LogicalDisk |
-            Select-Object -Property DeviceID, VolumeName, 
+            Select-Object -Property DeviceID, VolumeName,
             @{Label='Libre (Gb)'; expression={($_.FreeSpace/1GB).ToString('F2')}},
             @{Label='Provisionado (Gb)'; expression={($_.Size/1GB).ToString('F2')}},
             @{Label='Usado (Gb)'; expression={(($_.Size/1GB)-($_.FreeSpace/1GB)).ToString('F2')}}|ft} #usado es Provisionado - Libre # |ft es para el formato de tabla
         $contador2 = Invoke-Command -Session $ses -ScriptBlock {Get-WmiObject -Class Win32_LogicalDisk |
             Select-Object -Property @{Label='Real'; expression={(($_.Size/1GB)-($_.FreeSpace/1GB)).ToString('F2')}}}
 
-        
+
         #suma de espacio real de los distintos discos
         $total=0
         foreach ($i in $contador2.Real){

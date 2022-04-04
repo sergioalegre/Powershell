@@ -42,14 +42,13 @@
   - **VMWare_get_VMs_criticity** show a single VM criticity
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
 
-
 ### Archivos (Files management)
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
   - **ARCHIVOS_archieved_files** look for archieved files (offline attribute + disk size 0)
   - **ARCHIVOS_buscar_herencia_permisos_cortada** look for folder with inherance problems
   - **ARCHIVOS_copiar_jerarquia_carpetas** just copy folder jerarchy from source to destination
-  - **ARCHIVOS_Buscar archivos con un patron y ejecutarlos**
   - **ARCHIVOS_crear carpetas recursivamente y ponerles permisos**
+  - **ARCHIVOS Abre de 5 en 5 los ficheros .txt y .bmp de una ruta**
 
 ### Datacore
   - **DATACORE_varios.txt** cheetsheet
@@ -76,6 +75,7 @@
   - **WINDOWS_Remote_Sites_Average_Latency** calcula la latencia media contra todos los sites remotos desde un collocation
   - **AD buscar pcs con un patron de nombre**
   - **WINDOWS cambiar letra de unidad del homedrive**
+  - **WINDOWS_Servers_with_MBR_disks** mira en todas las VMs si algun disco que no sea el del OS tiene MBR
 
 ### Azure
   - **VMresize** resize Azure VMs
