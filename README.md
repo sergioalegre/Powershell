@@ -41,6 +41,7 @@
   - **VMWare_look_for_old_snapshots** in all vCenter
   - **VMWare_get_VMs_criticity** show a single VM criticity
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
+  - **VMWare-get_vm_information** Get PowerState, vCenterServer, Datacenter, Cluster, VMHost, Datastore, Folder, GuestOS, NetworkName, IPAddress, MacAddress, VMTools
 
 ### Archivos (Files management)
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
@@ -55,6 +56,7 @@
   - **List_Datacore_Server_IPs** list all Datacore servers IPs on vCenter
   - **SNMP config** configure SNMP settings and create firewall rules
   - **VMWare no ve los vDisk tras encender Datacore** Rescan iSCSI HBA if VMware do not detect vDisk afer Datacore power up
+  - **DATACORE_buscar_problemas_de_latencia_en_todos_los_datacore_servers** Busca latencias y log database detenido
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet
