@@ -21,7 +21,7 @@
   - string to int: WINDOWS_Remote_Sites_Average_Latency
   - string lenght reduce: VMWare_list_VMs_with_old_Commvault_backup
   - string substring: WINDOWS_Remote_Sites_Average_Latency
-  - try/catch: Azure_change_blob_tier_and_download_blobs
+  - try/catch: VMWare_list_VMs_with_old_Commvault_backup
   - PSSession: WINDOWS_ejecutar_comando_en_server_remoto
   - Test-Connection: WINDOWS_ejecutar_comando_en_server_remoto
   - ejecución en paralelo: WINDOWS_servers_con_conexiones_TIME_WAIT
@@ -57,6 +57,7 @@
   - **SNMP config** configure SNMP settings and create firewall rules
   - **VMWare no ve los vDisk tras encender Datacore** Rescan iSCSI HBA if VMware do not detect vDisk afer Datacore power up
   - **DATACORE_buscar_problemas_de_latencia_en_todos_los_datacore_servers** Busca latencias y log database detenido
+  - **DATACORE_ring_buffer_exhaustion_fix** Solucionar el problema de llenado del buffer
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet

@@ -1,4 +1,4 @@
-### Objetivo: Buscar en todos los sites alertas de latencia Datacore en la última semana. Tambien detecta si el Alert de Datacore esta parado
+﻿### Objetivo: Buscar en todos los sites alertas de latencia Datacore en la última semana.
 
 ### Debug:
 #$ErrorActionPreference= 'silentlycontinue'
@@ -11,14 +11,19 @@ cls
 Import-Module '\\SERVER\c$\Program Files\DataCore\SANsymphony\DataCore.Executive.Cmdlets.dll' -WarningAction silentlyContinue
 
 # Variables
-$DCListPlant = Get-Content '\\Server\DataCoreSites.txt'  # Ruta al archivo con la lista de las plantas con Datacore
+$DCListPlant = Get-Content '\\SERVER\E$\DataCoreSites.txt'  # Ruta al archivo con la lista de las plantas con Datacore
 $lista_roja = $lista_amarilla = @();
 $hoy=(GET-DATE)
 
 
 ForEach ($DCGroup in ($DCListPlant)) {
     #Sacar la password
-    ### Comandos privados
+    $DCName = $DCGroup + "CORE01"
+    $DCName02=$DCName.Substring(0,$DCName.Length-1)+"2"
+    $DCIPServer = nslookup $DCName
+    $DCIPPassword = $DCIPServer[4].split(".")[2]
+    $DCNamePassword = $DCName.Substring(0,3)
+    $DCPassword = $DCNamePassword + $DCIPPassword + "datacore"
     $DcsPassword = $DCPassword | ConvertTo-SecureString -AsPlainText -Force
 
     $DCUserName = 'Administrator'
@@ -32,12 +37,7 @@ ForEach ($DCGroup in ($DCListPlant)) {
     if($alertas.count -eq 0)
     {
         Write-Host "Alerta" $DCName "no tiene alertas asi que log database is paused" -ForegroundColor Yellow
-        if($DCName -eq "HARCORE01" -or $DCName -eq "ITACORE01"-or $DCName -eq "BAHCORE01"-or $DCName -eq "MLACORE01"){
-            $lista_amarilla = $lista_amarilla
-        }
-        else{
-            $lista_amarilla = $lista_amarilla + $DCName
-        }
+        $lista_amarilla = $lista_amarilla + $DCName
     }
     else #si hay alertas
     {
@@ -45,7 +45,7 @@ ForEach ($DCGroup in ($DCListPlant)) {
             $diferencia= $hoy – $alerta.Timestamp
             if($diferencia.Days -le 7)
             {
-                if($alerta.MessageText -like "*is >= 30s") # The I/O latency of Virtual Disk XXX from XXX is >= 30s este es el tipo de mensaje a detectar
+                if($alerta.MessageText -like "*is >= 30s") # The I/O latency of Virtual Disk SITE from SITE is >= 30s este es el tipo de mensaje a detectar
                 {
                     write-host "LATENCIAS en" $DCName "hace" $diferencia.Days "dias" -ForegroundColor Red
                     write-host $alerta.MessageText $alerta.Timestamp -ForegroundColor Gray
@@ -66,9 +66,9 @@ ForEach ($DCGroup in ($DCListPlant)) {
 }
 
 ###RESUMEN
-write-host "`n`n__________SITES CON LATENCIA__________"
+write-host "`n`n__________PLANTAS CON LATENCIA__________"
 write-host $lista_roja -ForegroundColor Red
-write-host "`n`n__________SITES CON LOG PARADO__________"
+write-host "`n`n__________PLANTAS CON LOG PARADO__________"
 write-host $lista_amarilla -ForegroundColor Yellow
 
 
@@ -107,8 +107,9 @@ $htmlCode += '</tr>'
 $htmlCode += '</table>'
 
 # Enviar reporte x email
-$from = "sergio.alegre@domain.com"
-$subject = "Datacore latency or log issues detected"
-$smtpServer = "ip.ip.ip.ip"
-$recipients = "sergio.alegre@domain.com"
+$from = "GANVMPWS03@grupoantolin.com"
+$subject = "GANVMPWS03 - Datacore latency or log issues detected"
+$smtpServer = "172.25.120.140"
+#$recipients = "infrasupport.ga@omega-peripherals.com","jesus.tamayo@grupoantolin.com","oscar.asuncion@grupoantolin.com","sergio.alegre@grupoantolin.com","Raul.hernando@grupoantolin.com"
+$recipients = "sergio.alegre@grupoantolin.com"
 Send-MailMessage -From $from -Subject $subject -SmtpServer $smtpServer -To $recipients -Body $htmlCode -BodyAsHtml
