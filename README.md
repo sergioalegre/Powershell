@@ -12,6 +12,8 @@
 
 [#Windows](#Windows)
 
+[#Commvault](#Commvault)
+
 ------------
 
 ### highlights
@@ -28,6 +30,8 @@
   - objetos array: WINDOWS_servers_con_conexiones_TIME_WAIT
   - exportar a csv: WINDOWS_servers_con_conexiones_TIME_WAIT
   - menu con opciones: VMWare-general_con_menu
+  - funciones: VMWare-plant_latency_against_FR
+  - funcion con mas de un parametro: commvault_check_Azure_backups
 
 ### VMWare
   - **VMWare_Change_SNMP_all_Hosts_in_vCenter**
@@ -42,6 +46,7 @@
   - **VMWare_get_VMs_criticity** show a single VM criticity
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
   - **VMWare-get_vm_information** Get PowerState, vCenterServer, Datacenter, Cluster, VMHost, Datastore, Folder, GuestOS, NetworkName, IPAddress, MacAddress, VMTools
+  - **VMWare-plant_latency_against_FR** latencia de sites remotos contra un punto central
 
 ### Archivos (Files management)
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
@@ -79,7 +84,10 @@
   - **AD buscar pcs con un patron de nombre**
   - **WINDOWS cambiar letra de unidad del homedrive**
   - **WINDOWS_Servers_with_MBR_disks** mira en todas las VMs si algun disco que no sea el del OS tiene MBR
+  - **WINDOWS_create_scheduled_task** crear una tarea programada
 
 ### Azure
   - **VMresize** resize Azure VMs
   - **Azure_change_blob_tier_and_download_blobs** list, change tier, download blobs, look for blobs based pattern name
+
+### Commvault
