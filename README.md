@@ -55,6 +55,7 @@
   - **ARCHIVOS_copiar_jerarquia_carpetas** just copy folder jerarchy from source to destination
   - **ARCHIVOS_crear carpetas recursivamente y ponerles permisos**
   - **ARCHIVOS Abre de 5 en 5 los ficheros .txt y .bmp de una ruta**
+  - **ARCHIVOS_FileWatcher_when_a_file_is_created_copy_to_Azure**
 
 ### Datacore
   - **DATACORE_varios.txt** cheetsheet
@@ -89,5 +90,6 @@
 ### Azure
   - **VMresize** resize Azure VMs
   - **Azure_change_blob_tier_and_download_blobs** list, change tier, download blobs, look for blobs based pattern name
+  - **Azure_FileWatcher_when_a_file_is_created_copy_to_Azure**
 
 ### Commvault
