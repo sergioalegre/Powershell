@@ -64,6 +64,7 @@
   - **VMWare no ve los vDisk tras encender Datacore** Rescan iSCSI HBA if VMware do not detect vDisk afer Datacore power up
   - **DATACORE_buscar_problemas_de_latencia_en_todos_los_datacore_servers** Busca latencias y log database detenido
   - **DATACORE_ring_buffer_exhaustion_fix** Solucionar el problema de llenado del buffer
+  - **DATACORE_healthCheck_completo** checkea en localhost u otro server varios componentes
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet
