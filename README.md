@@ -62,9 +62,10 @@
   - **List_Datacore_Server_IPs** list all Datacore servers IPs on vCenter
   - **SNMP config** configure SNMP settings and create firewall rules
   - **VMWare no ve los vDisk tras encender Datacore** Rescan iSCSI HBA if VMware do not detect vDisk afer Datacore power up
-  - **DATACORE_buscar_problemas_de_latencia_en_todos_los_datacore_servers** Busca latencias y log database detenido
-  - **DATACORE_ring_buffer_exhaustion_fix** Solucionar el problema de llenado del buffer
-  - **DATACORE_healthCheck_completo** checkea en localhost u otro server varios componentes
+  - **DATACORE_buscar_problemas_de_latencia_en_todos_los_datacore_servers** Se conecta a todos los Datacore Clusters y busca latencias en el log, tambien muestra si el log database esta detenido.
+  - **DATACORE_ring_buffer_exhaustion_fix** Solucionar el problema de llenado del buffer.
+  - **DATACORE_healthCheck_completo** checkea en localhost u otro server varios componentes.
+  - **DATACORE_get_all_vDisks_gloabally** Se conecta a todos los Datacore Clusters y muestra la ocupacion de todos los vDisks de cada cluster.
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet
