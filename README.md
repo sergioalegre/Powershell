@@ -32,6 +32,7 @@
   - menu con opciones: VMWare-general_con_menu
   - funciones: VMWare-plant_latency_against_FR
   - funcion con mas de un parametro: commvault_check_Azure_backups
+  - regular expressions: WINDOWS_Shadow_Copy_check_active
 
 ### VMWare
   - **VMWare_Change_SNMP_all_Hosts_in_vCenter**
@@ -88,6 +89,7 @@
   - **WINDOWS cambiar letra de unidad del homedrive**
   - **WINDOWS_Servers_with_MBR_disks** mira en todas las VMs si algun disco que no sea el del OS tiene MBR
   - **WINDOWS_create_scheduled_task** crear una tarea programada
+  - **WINDOWS_Shadow_Copy_check_active** comprueba si Shadow Copy esta activo en los servers en donde deberia estarlo
 
 ### Azure
   - **VMresize** resize Azure VMs
