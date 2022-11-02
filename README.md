@@ -2,8 +2,6 @@
 
 [#Datacore](#Datacore)
 
-[#Monitorizacion](#Monitorizacion)
-
 [#MYSQL](#MYSQL)
 
 [#Veeam](#Veeam)
@@ -11,6 +9,8 @@
 [#VMWare](#VMWare)
 
 [#Windows](#Windows)
+
+[#Azure](#Azure)
 
 [#Commvault](#Commvault)
 
