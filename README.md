@@ -27,8 +27,10 @@
   - PSSession: WINDOWS_ejecutar_comando_en_server_remoto
   - Test-Connection: WINDOWS_ejecutar_comando_en_server_remoto
   - ejecución en paralelo: WINDOWS_servers_con_conexiones_TIME_WAIT
+  - ejecucion en paralelo: DATACORE_ring_buffer_exhaustion_check
   - objetos array: WINDOWS_servers_con_conexiones_TIME_WAIT
   - exportar a csv: WINDOWS_servers_con_conexiones_TIME_WAIT
+  - exportar a csv: DATACORE_ring_buffer_exhaustion_check
   - menu con opciones: VMWare-general_con_menu
   - funciones: VMWare-plant_latency_against_FR
   - funcion con mas de un parametro: commvault_check_Azure_backups
@@ -67,6 +69,7 @@
   - **DATACORE_ring_buffer_exhaustion_fix** Solucionar el problema de llenado del buffer.
   - **DATACORE_healthCheck_completo** checkea en localhost u otro server varios componentes.
   - **DATACORE_get_all_vDisks_gloabally** Se conecta a todos los Datacore Clusters y muestra la ocupacion de todos los vDisks de cada cluster.
+  - **DATACORE_ring_buffer_exhaustion_check** Comprueba en todos los ESX la cantidad de drops en las tarjetas de mirros y si es mas de 10000 lo guarda en un CSV.
 
 ### MYSQL
   - **MSSQL_comandos_varios** cheetsheet
