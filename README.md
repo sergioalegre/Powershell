@@ -98,5 +98,6 @@
   - **VMresize** resize Azure VMs
   - **Azure_change_blob_tier_and_download_blobs** list, change tier, download blobs, look for blobs based pattern name
   - **Azure_FileWatcher_when_a_file_is_created_copy_to_Azure**
+  - **AZURE Template Spec export-import** Export/Import a RG via AZ CLI or Powershell
 
 ### Commvault
