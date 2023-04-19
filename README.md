@@ -1,6 +1,6 @@
 Check also my other github scripting repos for [BASH](https://github.com/sergioalegre/Bash-Script) and [PYTHON](https://github.com/sergioalegre/Python-automations).
 
-#POWERSHELL SCRIPTS INDEX
+**POWERSHELL SCRIPTS INDEX:**
 
 [#FILES](#FILES)
 
