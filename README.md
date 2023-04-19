@@ -1,3 +1,7 @@
+Check also my other github scripting repos for [BASH](https://github.com/sergioalegre/Bash-Script) and [PYTHON](https://github.com/sergioalegre/Python-automations).
+
+#POWERSHELL SCRIPTS INDEX
+
 [#FILES](#FILES)
 
 [#Datacore](#Datacore)
@@ -17,7 +21,7 @@
 ------------
 
 ### highlights
-  - barra de progreso: VMWare-count_VMs_by_criticity
+  - barra de progreso: VMWare-count_VMs_by_criticity, vmware-lookfor_Cluster_Degraded_Status
   - clear: VMWare-count_VMs_by_criticity
   - string to datetime conversion: VMWare_list_VMs_with_old_Commvault_backup
   - string to int: WINDOWS_Remote_Sites_Average_Latency
@@ -50,8 +54,9 @@
   - **VMWare-count_VMs_by_criticity** live counter and progress bar
   - **VMWare-get_vm_information** Get PowerState, vCenterServer, Datacenter, Cluster, VMHost, Datastore, Folder, GuestOS, NetworkName, IPAddress, MacAddress, VMTools
   - **VMWare-plant_latency_against_FR** latencia de sites remotos contra un punto central
+  - **vmware-lookfor_Cluster_Degraded_Status** look for cluster with less than 2 nodes (degraded)
 
-### Archivos (Files management)
+### Files
   - **ARCHIVOS_aiging** delete files older than x days in a determinate path
   - **ARCHIVOS_archieved_files** look for archieved files (offline attribute + disk size 0)
   - **ARCHIVOS_buscar_herencia_permisos_cortada** look for folder with inherance problems
